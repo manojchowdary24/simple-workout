@@ -18,7 +18,6 @@
     --rest-bg: #f3f4f6;
     --card:    #ffffff;
     --shadow:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-    --shadow2: 0 4px 12px rgba(0,0,0,0.10);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,7 +29,6 @@
     min-height: 100vh;
   }
 
-  /* ── HEADER ──────────────────────────────── */
   header {
     background: var(--green);
     padding: 18px 24px 14px;
@@ -46,289 +44,129 @@
     flex-wrap: wrap;
     gap: 8px;
   }
-  .app-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.3px;
-  }
+  .app-title { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
   .app-title span { color: #86efac; }
-  .date-display {
-    font-size: 13px;
-    color: #86efac;
-    font-family: 'DM Mono', monospace;
-  }
+  .date-display { font-size: 13px; color: #86efac; font-family: 'DM Mono', monospace; }
   .phase-badge {
-    background: var(--orange);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
+    background: var(--orange); color: #fff; font-size: 11px;
+    font-weight: 600; padding: 3px 10px; border-radius: 20px;
   }
 
-  /* ── DAY LABEL ───────────────────────────── */
-  .day-label {
-    padding: 20px 24px 0;
-  }
-  .day-name {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--green);
-    letter-spacing: -0.5px;
-  }
-  .day-sub {
-    font-size: 14px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
+  .day-label { padding: 20px 24px 0; }
+  .day-name { font-size: 26px; font-weight: 700; color: var(--green); letter-spacing: -0.5px; }
+  .day-sub  { font-size: 14px; color: var(--muted); margin-top: 2px; }
+
   .week-nav {
-    display: flex;
-    gap: 6px;
-    padding: 14px 24px 0;
-    overflow-x: auto;
-    scrollbar-width: none;
+    display: flex; gap: 6px; padding: 14px 24px 0;
+    overflow-x: auto; scrollbar-width: none;
   }
   .week-nav::-webkit-scrollbar { display: none; }
   .nav-day {
-    flex-shrink: 0;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 500;
-    background: var(--card);
-    color: var(--muted);
-    border: 1.5px solid var(--line);
-    cursor: pointer;
-    transition: all 0.15s;
+    flex-shrink: 0; padding: 6px 12px; border-radius: 8px;
+    font-size: 12px; font-weight: 500; background: var(--card);
+    color: var(--muted); border: 1.5px solid var(--line);
+    cursor: pointer; transition: all 0.15s; text-align: center;
   }
   .nav-day:hover { border-color: var(--green2); color: var(--green); }
-  .nav-day.active {
-    background: var(--green);
-    color: #fff;
-    border-color: var(--green);
-  }
+  .nav-day.active { background: var(--green); color: #fff; border-color: var(--green); }
   .nav-day.rest-day { background: var(--rest-bg); }
 
-  /* ── MAIN CONTENT ────────────────────────── */
-  main {
-    padding: 16px 24px 40px;
-    max-width: 780px;
-  }
+  main { padding: 16px 24px 40px; max-width: 780px; }
 
-  /* REST DAY */
   .rest-screen {
-    margin-top: 20px;
-    background: var(--card);
-    border-radius: 12px;
-    padding: 32px 24px;
-    text-align: center;
-    box-shadow: var(--shadow);
+    margin-top: 20px; background: var(--card); border-radius: 12px;
+    padding: 32px 24px; text-align: center; box-shadow: var(--shadow);
   }
   .rest-screen h2 { font-size: 22px; color: var(--muted); font-weight: 600; }
-  .rest-screen p { margin-top: 8px; color: var(--muted); font-size: 14px; }
+  .rest-screen p  { margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.5; }
   .rest-icon { font-size: 40px; margin-bottom: 12px; }
 
-  /* CRICKET DAY */
   .cricket-screen {
-    margin-top: 20px;
-    background: #fff8f2;
-    border: 2px solid var(--orange);
-    border-radius: 12px;
-    padding: 24px;
+    margin-top: 20px; background: #fff8f2;
+    border: 2px solid var(--orange); border-radius: 12px; padding: 24px;
   }
   .cricket-screen h2 { font-size: 20px; font-weight: 700; color: var(--orange); }
   .cricket-screen ul { margin-top: 12px; padding-left: 18px; }
-  .cricket-screen li { margin-bottom: 6px; font-size: 14px; line-height: 1.5; }
+  .cricket-screen li { margin-bottom: 8px; font-size: 14px; line-height: 1.5; }
 
-  /* SECTION BLOCK */
-  .section {
-    margin-top: 16px;
-    background: var(--card);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-  }
+  .section { margin-top: 14px; background: var(--card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
   .section-header {
-    background: var(--green);
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background: var(--green); padding: 10px 16px;
+    display: flex; align-items: center; justify-content: space-between;
   }
   .section-header.orange { background: var(--orange); }
-  .section-header.mint {
-    background: var(--mint);
-  }
-  .section-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  .section-header.mint   { background: var(--mint); }
+  .section-title { font-size: 13px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
   .section-header.mint .section-title { color: var(--green); }
-  .section-time {
-    font-size: 11px;
-    color: rgba(255,255,255,0.75);
-    font-family: 'DM Mono', monospace;
-  }
+  .section-time { font-size: 11px; color: rgba(255,255,255,0.75); font-family: 'DM Mono', monospace; }
   .section-header.mint .section-time { color: var(--green2); }
 
-  /* GROUP LABEL */
   .group-label {
-    padding: 8px 16px 4px;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--orange);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    background: #fff8f2;
-    border-bottom: 1px solid #ffe8d6;
+    padding: 7px 16px; font-size: 11px; font-weight: 600;
+    color: var(--orange); text-transform: uppercase; letter-spacing: 0.4px;
+    background: #fff8f2; border-bottom: 1px solid #ffe8d6;
+  }
+  .rest-note {
+    padding: 7px 16px; font-size: 11px; color: var(--green);
+    font-weight: 600; background: var(--mint);
+    border-bottom: 1px solid #c6e8d4; letter-spacing: 0.2px;
   }
 
-  /* EXERCISE ROW */
   .ex-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 12px; padding: 12px 16px;
+    border-bottom: 1px solid var(--line); align-items: start;
   }
   .ex-row:last-child { border-bottom: none; }
   .ex-row.shade { background: #fafafa; }
-  .ex-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-    line-height: 1.3;
-  }
-  .ex-tip {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 3px;
-    line-height: 1.4;
-  }
-  .ex-key {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--orange);
-    margin-top: 3px;
-  }
-  .ex-meta {
-    text-align: right;
-    flex-shrink: 0;
-    min-width: 110px;
-  }
-  .ex-sets {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--green);
-    font-family: 'DM Mono', monospace;
-    line-height: 1.3;
-    white-space: nowrap;
-  }
-  .ex-weight {
-    font-size: 11px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    margin-top: 2px;
-  }
+  .ex-name { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .ex-tip  { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.45; }
+  .ex-key  { font-size: 11px; font-weight: 600; color: var(--orange); margin-top: 3px; }
+  .ex-meta { text-align: right; flex-shrink: 0; min-width: 110px; }
+  .ex-sets { font-size: 13px; font-weight: 700; color: var(--green); font-family: 'DM Mono', monospace; line-height: 1.3; white-space: nowrap; }
+  .ex-weight { font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; margin-top: 2px; }
 
-  /* REST BADGE */
-  .rest-note {
-    padding: 7px 16px;
-    font-size: 11px;
-    color: var(--green);
-    font-weight: 600;
-    background: var(--mint);
-    border-bottom: 1px solid #c6e8d4;
-    letter-spacing: 0.2px;
-  }
-
-  /* PHASE INFO */
   .phase-info {
-    margin-top: 14px;
-    background: var(--card);
-    border-radius: 12px;
-    border: 1.5px solid var(--line);
-    padding: 14px 16px;
-    box-shadow: var(--shadow);
+    margin-top: 14px; background: var(--card); border-radius: 12px;
+    border: 1.5px solid var(--line); padding: 14px 16px; box-shadow: var(--shadow);
   }
   .phase-info h4 {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--green);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    font-size: 12px; font-weight: 700; color: var(--green);
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
   }
-  .phase-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-  .phase-card {
-    background: var(--cream);
-    border-radius: 8px;
-    padding: 8px 10px;
-    border: 1.5px solid var(--line);
-  }
-  .phase-card.current {
-    background: var(--mint);
-    border-color: var(--green2);
-  }
-  .phase-card-title {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--green);
-  }
-  .phase-card.current .phase-card-title { color: var(--green); }
-  .phase-card-detail {
-    font-size: 10.5px;
-    color: var(--muted);
-    margin-top: 2px;
-    line-height: 1.4;
-  }
+  .phase-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .phase-card { background: var(--cream); border-radius: 8px; padding: 8px 10px; border: 1.5px solid var(--line); }
+  .phase-card.current { background: var(--mint); border-color: var(--green2); }
+  .phase-card-title  { font-size: 11px; font-weight: 700; color: var(--green); }
+  .phase-card-detail { font-size: 10.5px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
 
-  /* PROGRESS */
   .progress-bar-wrap {
-    margin-top: 14px;
-    background: var(--card);
-    border-radius: 12px;
-    padding: 14px 16px;
-    box-shadow: var(--shadow);
+    margin-top: 14px; background: var(--card);
+    border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow);
   }
   .progress-bar-wrap h4 {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
+    font-size: 12px; font-weight: 700; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 8px; display: flex; justify-content: space-between;
   }
-  .progress-track {
-    background: var(--line);
-    border-radius: 99px;
-    height: 8px;
-    overflow: hidden;
+  .progress-track { background: var(--line); border-radius: 99px; height: 8px; overflow: hidden; }
+  .progress-fill  { background: var(--green); height: 100%; border-radius: 99px; transition: width 0.5s ease; }
+
+  .back-notice {
+    margin-top: 14px; background: #fff8f2;
+    border: 1.5px solid var(--orange); border-radius: 12px; padding: 12px 16px;
   }
-  .progress-fill {
-    background: var(--green);
-    height: 100%;
-    border-radius: 99px;
-    transition: width 0.5s ease;
+  .back-notice h4 {
+    font-size: 12px; font-weight: 700; color: var(--orange);
+    text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;
   }
+  .back-notice p { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
   @media (max-width: 500px) {
     main { padding: 12px 16px 40px; }
     header { padding: 14px 16px 12px; }
     .day-label { padding: 16px 16px 0; }
-    .week-nav { padding: 12px 16px 0; }
+    .week-nav  { padding: 12px 16px 0; }
     .phase-grid { grid-template-columns: 1fr; }
     .ex-meta { min-width: 90px; }
   }
@@ -341,403 +179,306 @@
     <div class="app-title">Cricket <span>Fitness</span></div>
     <div style="display:flex;gap:8px;align-items:center;">
       <div class="phase-badge" id="phaseBadge">Phase 1</div>
-      <div class="date-display" id="dateDisplay">Mon 28 Apr</div>
+      <div class="date-display" id="dateDisplay"></div>
     </div>
   </div>
 </header>
 
 <div class="day-label">
   <div class="day-name" id="dayName">Loading...</div>
-  <div class="day-sub" id="daySub"></div>
+  <div class="day-sub"  id="daySub"></div>
 </div>
 
 <div class="week-nav" id="weekNav"></div>
-
 <main id="mainContent"></main>
 
 <script>
-// ── START DATE ─────────────────────────────────────────────────
-// Plan starts Monday 28 April 2026
-const PLAN_START = new Date(2026, 3, 28); // month is 0-indexed
+const PLAN_START = new Date(2026, 3, 28); // 28 Apr 2026
+const DAY_TYPES  = ['pull','leg','rest','push','full','cricket','rest'];
 
-// ── PLAN CYCLE: Mon=Pull, Tue=Leg, Wed=REST, Thu=Push, Fri=Full, Sat=Cricket, Sun=REST
-const DAY_TYPES = ['pull','leg','rest','push','full','cricket','rest'];
-
-// ── PHASE based on weeks elapsed ──────────────────────────────
-function getPhase(weekNum) {
-  if (weekNum <= 4)  return 1;
-  if (weekNum <= 8)  return 2;
-  return 3;
-}
+function getPhase(w) { return w<=4 ? 1 : w<=8 ? 2 : 3; }
 
 function getDayInfo(date) {
-  const msPerDay = 86400000;
-  const daysDiff = Math.floor((date - PLAN_START) / msPerDay);
-  if (daysDiff < 0) return { type: 'before', week: 0, phase: 1 };
-  const weekNum = Math.floor(daysDiff / 7) + 1;
-  const phase   = getPhase(weekNum);
-  const dayOfWeek = date.getDay(); // 0=Sun,1=Mon,...6=Sat
-  const type = DAY_TYPES[dayOfWeek === 0 ? 6 : dayOfWeek - 1];
-  return { type, week: weekNum, phase, daysDiff };
+  const diff = Math.floor((date - PLAN_START) / 86400000);
+  if (diff < 0) return { type:'before', week:0, phase:1, diff:0 };
+  const week = Math.floor(diff/7)+1;
+  const dow  = date.getDay();
+  return { type: DAY_TYPES[dow===0?6:dow-1], week, phase: getPhase(week), diff };
 }
 
-// ── DATA ───────────────────────────────────────────────────────
+const R = (ph,a,b,c) => ph===1?a:ph===2?b:c;
 
+// ── WORKOUT DATA ───────────────────────────────────────────────
 const WORKOUTS = {
 
   pull: {
     title: 'Pull Day',
-    sub:   'Back · Biceps · Core — ~55 min',
-    sections: (ph) => [
-      {
-        label: 'Warm-up', time: '8 min', color: 'mint',
-        restNote: null,
-        exercises: [
-          { name: 'March in place',        sets: '2 min',           weight: '',       tip: 'Raises your heart rate gently' },
-          { name: 'Arm circles fwd + back',sets: '30 sec each way', weight: '',       tip: 'Loosens shoulders before rows' },
-          { name: 'Cat Cow',               sets: '2 sets × 8 reps', weight: '',       tip: 'Breathe in as you arch, out as you round. Go slow.' },
-          { name: 'Dead hang from bar',    sets: '2 × 15 sec',      weight: 'BW',     tip: 'Just hang — no pulling. Decompresses your spine.' },
-        ]
-      },
-      {
-        label: 'Superset 1', time: null, color: 'orange',
-        groupNote: 'Do 1A then immediately 1B. Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' after both. Repeat ' + (ph===1?'3':'4') + ' times.',
-        exercises: [
-          { name: '1A. Negative Pull-up',
-            sets: (ph===1?'3':'4') + ' sets × 5 reps',
-            weight: 'Bodyweight',
-            tip: 'Jump so chin is above bar. Lower yourself slowly — 4 seconds down. Do full pull-ups if you can.',
-            key: '★ Most important for batting arm strength' },
-          { name: '1B. DB Bent-over Row',
-            sets: (ph===1?'3':'4') + ' sets × 12 reps',
-            weight: ph===1?'10 lb each':ph===2?'15 lb each':'20 lb each',
-            tip: 'Hinge forward 45°. Pull elbows back to hips. Squeeze shoulder blades together at top.' },
-        ]
-      },
-      {
-        label: 'Superset 2', time: null, color: 'orange',
-        groupNote: 'Do 2A then immediately 2B. Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' after both. Repeat ' + (ph===1?'3':'4') + ' times.',
-        exercises: [
-          { name: '2A. DB Bicep Curl',
-            sets: (ph===1?'3':'4') + ' sets × 12 reps',
-            weight: ph===1?'10 lb each':ph===2?'15 lb each':'20 lb each',
-            tip: 'Elbows stay at your sides throughout. 2 sec up, 3 sec down. No swinging.' },
-          { name: '2B. Superman Hold',
-            sets: (ph===1?'3':'4') + ' sets × 10 reps',
-            weight: 'Bodyweight',
-            tip: 'Lie face down, arms stretched forward. Lift arms + chest + legs off floor at once. Hold 3 sec at top.' },
-        ]
-      },
-      {
-        label: 'Standalone', time: null, color: 'green',
-        restNote: 'Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' between sets',
-        exercises: [
-          { name: 'Dead Bug',
-            sets: (ph===1?'3':'4') + ' sets × 8 each side',
-            weight: 'Bodyweight',
-            tip: 'On back with arms + knees up. Slowly lower opposite arm + leg. Do NOT let your lower back arch off the floor.' },
-          { name: 'DB Hammer Curl',
-            sets: '3 sets × 10 reps',
-            weight: ph===1?'10 lb each':ph===2?'15 lb each':'20 lb each',
-            tip: 'Palms face each other (like holding a hammer). Same curling motion. Builds forearm grip for batting.' },
-          ...(ph===3 ? [{
-            name: 'Renegade Row  (Phase 3)',
-            sets: '3 sets × 8 each side',
-            weight: '10–15 lb each',
-            tip: 'Push-up position with dumbbells on floor. Row one dumbbell to hip. Keep hips square — don\'t rotate.',
-            key: 'New in Phase 3'
-          }] : []),
-        ]
-      },
-      ...(ph >= 2 ? [{
-        label: 'Cardio Finisher', time: ph===2?'5 min':'8 min', color: 'orange',
-        groupNote: (ph===2?'3':'5') + ' rounds. 30 sec on / 20 sec rest between each exercise.',
-        exercises: [
-          { name: 'High Knees',    sets: '30 sec', weight: '', tip: 'Drive knees up to hip height, pump arms. Sprint pace.' },
-          { name: 'Jumping Jacks', sets: '30 sec', weight: '', tip: 'Active recovery between high knee rounds.' },
-        ]
-      }] : []),
-      {
-        label: 'Cool-down', time: '7 min', color: 'mint',
-        restNote: null,
-        exercises: [
-          { name: "Child's Pose",          sets: '45 sec',            weight: '', tip: 'Sit back on heels, arms stretched forward on floor.' },
-          { name: 'Doorway chest stretch', sets: '30 sec each side',  weight: '', tip: 'Arms on door frame, lean your body through gently.' },
-          { name: 'Cross-body arm stretch',sets: '30 sec each side',  weight: '', tip: 'Pull arm across chest with your other hand.' },
-          { name: 'Bicep wall stretch',    sets: '30 sec each side',  weight: '', tip: 'Palm flat on wall at shoulder height. Gently turn body away.' },
-          { name: 'Deep breathing',        sets: '1 min',             weight: '', tip: 'Inhale 4 sec → hold 2 sec → exhale 6 sec. Full reset.' },
-        ]
-      },
+    sub:   'Back · Biceps · Core  —  ~55 min',
+    sections: ph => [
+      { label:'Warm-up', time:'8 min', color:'mint', exercises:[
+        { name:'March in place',         sets:'2 min',           tip:'Raises heart rate gently.' },
+        { name:'Arm circles fwd + back', sets:'30 sec each way', tip:'Loosens shoulders before rows.' },
+        { name:'Cat Cow',                sets:'2 sets × 8 reps', tip:'Breathe in as you arch, out as you round. Go slow.' },
+        { name:'Dead hang from bar',     sets:'2 × 15 sec',      tip:'Just hang — no pulling. Decompresses your spine.' },
+      ]},
+      { label:'Superset 1', color:'orange',
+        groupNote:`Do 1A then immediately 1B. Rest ${R(ph,'60s','45s','30s')} after both. Repeat ${R(ph,'3','4','4')} times.`,
+        exercises:[
+          { name:'1A. Negative Pull-up',
+            sets:`${R(ph,'3','4','4')} sets × 5 reps`, weight:'Bodyweight',
+            tip:'Jump so chin is above bar. Lower yourself slowly — 4 seconds down. Do full pull-ups if you can.',
+            key:'★ Most important for batting arm strength' },
+          { name:'1B. DB Bent-over Row',
+            sets:`${R(ph,'3','4','4')} sets × 12 reps`, weight:R(ph,'10 lb each','15 lb each','20 lb each'),
+            tip:'Hinge forward 45°. Pull elbows back to hips. Squeeze shoulder blades together at top.' },
+        ]},
+      { label:'Superset 2', color:'orange',
+        groupNote:`Do 2A then immediately 2B. Rest ${R(ph,'60s','45s','30s')} after both. Repeat ${R(ph,'3','4','4')} times.`,
+        exercises:[
+          { name:'2A. DB Bicep Curl',
+            sets:`${R(ph,'3','4','4')} sets × 12 reps`, weight:R(ph,'10 lb each','15 lb each','20 lb each'),
+            tip:'Elbows stay at your sides throughout. 2 sec up, 3 sec down. No swinging.' },
+          { name:'2B. Superman Hold',
+            sets:`${R(ph,'3','4','4')} sets × 10 reps`, weight:'Bodyweight',
+            tip:'Lie face down, arms stretched forward. Lift arms + chest + legs off floor at once. Hold 3 sec at top.' },
+        ]},
+      { label:'Standalone', color:'green',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          { name:'Dead Bug',
+            sets:`${R(ph,'3','4','4')} sets × 8 each side`, weight:'Bodyweight',
+            tip:'On back with arms + knees up. Slowly lower opposite arm + leg. Do NOT let your lower back arch off the floor.' },
+          { name:'DB Hammer Curl',
+            sets:'3 sets × 10 reps', weight:R(ph,'10 lb each','15 lb each','20 lb each'),
+            tip:'Palms face each other (like holding a hammer). Builds forearm grip for batting.' },
+          ...(ph===3?[{ name:'Renegade Row  (Phase 3)',
+            sets:'3 sets × 8 each side', weight:'10–15 lb each',
+            tip:'Push-up position with dumbbells. Row one dumbbell to hip. Keep hips square.',
+            key:'New in Phase 3' }]:[]),
+        ]},
+      ...(ph>=2?[{ label:'Cardio Finisher', time:R(ph,'','5 min','8 min'), color:'orange',
+        groupNote:`${R(ph,'','3','5')} rounds. 30 sec on / 20 sec rest.`,
+        exercises:[
+          { name:'High Knees',    sets:'30 sec', tip:'Drive knees up to hip height, pump arms. Sprint pace.' },
+          { name:'Jumping Jacks', sets:'30 sec', tip:'Active recovery between high-knee rounds.' },
+        ]}]:[]),
+      { label:'Cool-down', time:'7 min', color:'mint', exercises:[
+        { name:"Child's Pose",           sets:'45 sec',           tip:'Sit back on heels, arms stretched forward on floor.' },
+        { name:'Doorway chest stretch',  sets:'30 sec each side', tip:'Arms on door frame, lean your body through gently.' },
+        { name:'Cross-body arm stretch', sets:'30 sec each side', tip:'Pull arm across chest with your other hand.' },
+        { name:'Bicep wall stretch',     sets:'30 sec each side', tip:'Palm flat on wall at shoulder height. Gently turn body away.' },
+        { name:'Deep breathing',         sets:'1 min',            tip:'Inhale 4 sec → hold 2 sec → exhale 6 sec. Full reset.' },
+      ]},
     ]
   },
 
+  // ── LEG DAY — fixed order to protect lower back ──────────────
   leg: {
     title: 'Leg Day',
-    sub:   'Legs · Calves · Core — ~55 min',
-    sections: (ph) => [
-      {
-        label: 'Warm-up', time: '8 min', color: 'mint',
-        exercises: [
-          { name: 'March in place',         sets: '1 min',             weight: '', tip: 'Gentle start, get blood flowing to legs.' },
-          { name: 'Leg swings fwd-back',    sets: '20 each leg',       weight: '', tip: 'Swing leg like a pendulum. Hold a wall for balance.' },
-          { name: 'Leg swings side-to-side',sets: '20 each leg',       weight: '', tip: 'Swing leg across body and out to the side.' },
-          { name: 'Ankle rolls',            sets: '20 each foot',      weight: '', tip: 'Full circles each way. Critical for calf health.' },
-          { name: 'Slow bodyweight squat',  sets: '10 reps',           weight: '', tip: 'Easy pace — this is warm-up only, no weight.' },
-        ]
-      },
-      {
-        label: 'Standalone', time: null, color: 'green',
-        restNote: 'Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' between sets',
-        exercises: [
-          { name: 'Squat',
-            sets: '4 sets × 15 reps',
-            weight: ph===1?'Bodyweight':ph===2?'10 lb each hand':'20 lb (goblet hold)',
-            tip: 'Feet shoulder-width. Lower until thighs parallel to floor. Chest up, knees track over toes. Squeeze glutes at top.',
-            key: '★ Core exercise for batting power' },
-        ]
-      },
-      {
-        label: 'Superset 1', time: null, color: 'orange',
-        groupNote: 'Do 1A then immediately 1B. Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' after both. Repeat 3 times.',
-        exercises: [
-          { name: '1A. Reverse Lunge',
-            sets: '3 sets × 10 each leg',
-            weight: ph===1?'Bodyweight':ph===2?'5 lb each':'10 lb each',
-            tip: 'Step ONE foot BACK. Lower rear knee toward floor. Push through front foot to stand. If hip still sore, do Glute Bridge instead.' },
-          { name: '1B. Glute Bridge',
-            sets: '3 sets × 15 reps',
-            weight: ph===1?'Bodyweight':'10 lb on hips',
-            tip: 'On back, feet flat. Push hips up until body is straight from knees to shoulders. Hold 2 sec at top. Squeeze glutes hard.' },
-        ]
-      },
-      {
-        label: 'Calf Raises  ★ NEVER SKIP', time: null, color: 'orange',
-        groupNote: 'This is your main fix for calf pain. Do it every single Leg Day.',
-        exercises: [
-          { name: 'Slow Calf Raise',
-            sets: '4 sets × ' + (ph===1?'20':ph===2?'25':'30') + ' reps',
-            weight: ph===1?'Bodyweight':ph===2?'Hold 10 lb dumbbell':'Hold 20 lb dumbbell',
-            tip: '2 sec UP → hold 1 sec at top → 3 sec DOWN. Full range. Hold pull-up stand lightly for balance.',
-            key: '★ Directly fixes your fielding calf pain' },
-        ]
-      },
-      {
-        label: 'Superset 2', time: null, color: 'orange',
-        groupNote: 'Do 2A then immediately 2B. Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' after both. Repeat 3 times.',
-        exercises: [
-          { name: '2A. Plank (forearms)',
-            sets: '3 sets × ' + (ph===1?'30':ph===2?'45':'60') + ' sec',
-            weight: 'Bodyweight',
-            tip: 'Elbows under shoulders. Body in a straight line head to heels. Tighten belly. Breathe normally.' },
-          { name: '2B. Wall Sit',
-            sets: '3 sets × ' + (ph===1?'30':ph===2?'45':'60') + ' sec',
-            weight: 'Bodyweight',
-            tip: 'Back flat on wall. Thighs parallel to floor. Hold and breathe. Builds the leg endurance for long batting spells.' },
-        ]
-      },
-      ...(ph===3 ? [{
-        label: 'Phase 3 Addition', time: null, color: 'green',
-        restNote: 'Rest 30 sec between sets',
-        exercises: [
-          { name: 'Jump Squat',
-            sets: '3 sets × 10 reps',
-            weight: 'Bodyweight',
-            tip: 'Regular squat, then explode upward off both feet. Land softly bending knees to absorb. Builds sprint power for quick singles.',
-            key: 'New in Phase 3' }
-        ]
-      }] : []),
-      ...(ph >= 2 ? [{
-        label: 'Cardio Finisher', time: ph===2?'5 min':'8 min', color: 'orange',
-        groupNote: (ph===2?'3':'5') + ' rounds. 30 sec on / 20 sec rest.',
-        exercises: [
-          { name: 'High Knees',    sets: '30 sec', weight: '', tip: 'Knees up to hip height. Arms pumping. Max effort.' },
-          { name: 'Jumping Jacks', sets: '30 sec', weight: '', tip: 'Steady pace. Keeps heart rate up between rounds.' },
-        ]
-      }] : []),
-      {
-        label: 'Cool-down', time: '7 min', color: 'mint',
-        exercises: [
-          { name: 'Calf stretch (wall)',       sets: '45 sec each',     weight: '', tip: 'One foot back, heel pressed into floor, lean toward wall. Do this every night before bed too.' },
-          { name: 'Seated hamstring stretch',  sets: '45 sec each leg', weight: '', tip: 'Sit on floor, one leg out straight, reach toward toes. Other leg can be bent.' },
-          { name: 'Figure-4 glute stretch',    sets: '40 sec each',     weight: '', tip: 'On back, cross ankle over opposite knee, pull legs toward you gently.' },
-          { name: 'Hip flexor stretch',        sets: '30 sec each',     weight: '', tip: 'One knee on floor, other foot forward. Lean forward gently until you feel the stretch.' },
-          { name: "Child's Pose",              sets: '1 min',           weight: '', tip: 'Full back and hip release to finish.' },
-        ]
-      },
+    sub:   'Legs · Calves · Core  —  ~55 min',
+    sections: ph => [
+      { label:'Warm-up', time:'8 min', color:'mint', exercises:[
+        { name:'March in place',           sets:'1 min',             tip:'Gentle start, get blood flowing to legs.' },
+        { name:'Leg swings fwd-back',      sets:'20 each leg',       tip:'Swing leg like a pendulum. Hold a wall for balance.' },
+        { name:'Leg swings side-to-side',  sets:'20 each leg',       tip:'Swing leg across body and out to the side.' },
+        { name:'Ankle rolls',              sets:'20 each foot',      tip:'Full circles each way. Critical for calf health.' },
+        { name:"Child's Pose side reach",  sets:'30 sec each side',  tip:'Arms forward then walk hands left, hold, then right. Warms up the lower back and QL muscle before loading it.' },
+      ]},
+      { label:'Step 1 — Core Activation  ★ DO THIS BEFORE SQUATS', color:'orange',
+        groupNote:'Activating your core FIRST protects your lower back during all loaded exercises that follow. This is why leg day was hurting your back — it was missing this step.',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          { name:'Dead Bug',
+            sets:'2 sets × 8 each side', weight:'Bodyweight',
+            tip:'On back, arms + knees up. Slowly lower opposite arm + leg toward floor. Do NOT let lower back arch. Wakes up your deep core before squats.',
+            key:'★ Moved to start — protects your lower back' },
+        ]},
+      { label:'Step 2 — Glute Activation  ★ DO THIS BEFORE SQUATS', color:'orange',
+        groupNote:'Firing glutes first means they do the work in squats — not your lower back. This directly prevents the QL pain you had last session.',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          { name:'Glute Bridge',
+            sets:'3 sets × 15 reps', weight:R(ph,'Bodyweight','10 lb on hips','10 lb on hips'),
+            tip:'On back, feet flat. Push hips up until body straight from knees to shoulders. Squeeze glutes HARD at top, hold 2 sec. If you feel it more in your lower back than glutes — squeeze harder.',
+            key:'★ Moved before squats — glutes protect your lower back' },
+        ]},
+      { label:'Step 3 — Main Leg Work', color:'green',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          { name:'Squat',
+            sets:'4 sets × 15 reps', weight:R(ph,'Bodyweight','10 lb each hand','20 lb goblet hold'),
+            tip:'Feet shoulder-width. Lower until thighs parallel to floor. Chest up, core braced. Squeeze glutes at top. Your glutes are already warm from the bridge above.',
+            key:'★ Core exercise for batting power' },
+        ]},
+      { label:'Step 4 — Calf Raises  ★ NEVER SKIP', color:'orange',
+        groupNote:'Your most important fix for fielding calf pain. Do this every single Leg Day.',
+        exercises:[
+          { name:'Slow Calf Raise',
+            sets:`4 sets × ${R(ph,'20','25','30')} reps`, weight:R(ph,'Bodyweight','Hold 10 lb dumbbell','Hold 20 lb dumbbell'),
+            tip:'2 sec UP → hold 1 sec at top → 3 sec DOWN. Full range. Hold pull-up stand lightly for balance.',
+            key:'★ Directly fixes your fielding calf pain' },
+        ]},
+      { label:'Step 5 — Lunges + Finisher', color:'green',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          { name:'Reverse Lunge',
+            sets:'3 sets × 10 each leg', weight:R(ph,'Bodyweight','5 lb each','10 lb each'),
+            tip:'Step ONE foot BACK. Lower rear knee toward floor. Push through front foot to stand. Hips are warmer now so this is safer here. Skip if lower back is still sore.',
+            key:'Skip if lower back still sore this week' },
+          { name:'Wall Sit',
+            sets:`3 sets × ${R(ph,'30','45','60')} sec`, weight:'Bodyweight',
+            tip:'Back flat on wall. Thighs parallel to floor. Hold and breathe. Builds leg endurance for long batting spells.' },
+          ...(ph===3?[{ name:'Jump Squat  (Phase 3)',
+            sets:'3 sets × 10 reps', weight:'Bodyweight',
+            tip:'Squat then explode upward. Land softly bending knees. Builds sprint power for quick singles.',
+            key:'New in Phase 3' }]:[]),
+        ]},
+      { label:'Step 6 — Plank', color:'green',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          { name:'Plank (forearms)',
+            sets:`3 sets × ${R(ph,'30','45','60')} sec`, weight:'Bodyweight',
+            tip:'Elbows under shoulders. Body straight head to heels. Tighten belly. Breathe normally. Placed at the end so your core stabilisers have already fired earlier in the session.' },
+        ]},
+      ...(ph>=2?[{ label:'Cardio Finisher', time:R(ph,'','5 min','8 min'), color:'orange',
+        groupNote:`${R(ph,'','3','5')} rounds. 30 sec on / 20 sec rest.`,
+        exercises:[
+          { name:'High Knees',    sets:'30 sec', tip:'Knees up to hip height. Arms pumping. Max effort.' },
+          { name:'Jumping Jacks', sets:'30 sec', tip:'Steady pace. Keeps heart rate up between rounds.' },
+        ]}]:[]),
+      { label:'Cool-down', time:'7 min', color:'mint', exercises:[
+        { name:'Calf stretch (wall)',       sets:'45 sec each',      tip:'One foot back, heel pressed into floor, lean toward wall. Do this every night before bed too.' },
+        { name:"Child's Pose side reach",  sets:'30 sec each side', tip:'Walk hands left, hold, then right. Directly stretches your QL — the lower back muscle that got sore last session.' },
+        { name:'Seated hamstring stretch', sets:'45 sec each leg',  tip:'Sit on floor, one leg out straight, reach toward toes.' },
+        { name:'Figure-4 glute stretch',   sets:'40 sec each side', tip:'On back, cross ankle over opposite knee, pull legs toward you gently.' },
+        { name:"Child's Pose",             sets:'1 min',            tip:'Full back and hip release to finish.' },
+      ]},
     ]
   },
 
   push: {
     title: 'Push Day',
-    sub:   'Chest · Shoulders · Triceps — ~55 min',
-    sections: (ph) => [
-      {
-        label: 'Warm-up', time: '8 min', color: 'mint',
-        exercises: [
-          { name: 'Arm circles fwd + back',   sets: '1 min',           weight: '', tip: 'Full shoulder warm-up. Go big circles.' },
-          { name: 'Wall push-ups',            sets: '10 reps',         weight: '', tip: 'Hands on wall, easy chest opener. Warm-up only.' },
-          { name: 'Cat Cow',                  sets: '2 sets × 8 reps', weight: '', tip: 'Spine mobility. Breathe with each movement.' },
-          { name: 'Shadow batting swings',    sets: '20 reps',         weight: '', tip: 'Cricket-specific. Loosens shoulders, chest, and core.' },
-        ]
-      },
-      {
-        label: 'Standalone', time: null, color: 'green',
-        restNote: 'Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' between sets',
-        exercises: [
-          { name: 'Push-up',
-            sets: '4 sets × ' + (ph===1?'10':ph===2?'15':'20') + ' reps',
-            weight: 'Bodyweight',
-            tip: 'Hands slightly wider than shoulders. 2 sec down, 1 sec up. Do on knees if needed — that is totally fine.',
-            key: '★ Add 2 reps each week' },
-        ]
-      },
-      {
-        label: 'Superset 1', time: null, color: 'orange',
-        groupNote: 'Do 1A then immediately 1B. Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' after both. Repeat 3 times.',
-        exercises: [
-          { name: '1A. DB Overhead Press',
-            sets: '3 sets × 12 reps',
-            weight: ph===1?'10 lb each':ph===2?'15 lb each':'20 lb each',
-            tip: 'Seated or standing. Dumbbells at shoulders, press straight up. Lower slowly — 3 sec down.' },
-          { name: '1B. DB Front Raise',
-            sets: '3 sets × 12 reps',
-            weight: ph===1?'5 lb each':ph===2?'8 lb each':'10 lb each',
-            tip: 'Arms straight, raise to shoulder height in front. Lower slowly. Don\'t swing.' },
-        ]
-      },
-      {
-        label: 'Superset 2', time: null, color: 'orange',
-        groupNote: 'Do 2A then immediately 2B. Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' after both. Repeat 3 times.',
-        exercises: [
-          { name: '2A. DB Tricep Kickback',
-            sets: '3 sets × 10 reps each arm',
-            weight: ph===1?'10 lb':ph===2?'15 lb':'20 lb',
-            tip: 'Hinge forward. Upper arm stays parallel to floor. Extend arm back fully. Squeeze tricep at top.' },
-          { name: '2B. Pike Push-up',
-            sets: '3 sets × ' + (ph===1?'8':ph===2?'10':'12') + ' reps',
-            weight: 'Bodyweight',
-            tip: 'Hips high in a V-shape. Bend elbows to lower head toward floor. Push back up. Builds shoulder strength for throwing.' },
-        ]
-      },
-      {
-        label: 'Standalone', time: null, color: 'green',
-        restNote: 'Rest ' + (ph===1?'60s':ph===2?'45s':'30s') + ' between sets',
-        exercises: [
-          ...(ph >= 2 ? [{
-            name: 'DB Lateral Raise',
-            sets: '3 sets × 12 reps',
-            weight: ph===2?'5–8 lb each':'8–10 lb each',
-            tip: 'Arms at sides, raise out sideways to shoulder height. Lower slowly. Great for shoulder stability in throws.',
-            key: 'Added from Phase 2'
-          }] : []),
-          { name: 'Superman Hold',
-            sets: '3 sets × 10 reps',
-            weight: 'Bodyweight',
-            tip: 'Lie face down, arms forward. Lift arms + chest + legs off floor at same time. Hold 3 sec.' },
-          ...(ph===3 ? [{
-            name: 'DB Floor Press  (Phase 3)',
-            sets: '3 sets × 12 reps',
-            weight: '20 lb each hand',
-            tip: 'Lie on back on floor, dumbbells at chest. Press up. Lower until elbows touch floor each rep.',
-            key: 'New in Phase 3'
-          }] : []),
-        ]
-      },
-      ...(ph >= 2 ? [{
-        label: 'Cardio Finisher', time: ph===2?'5 min':'8 min', color: 'orange',
-        groupNote: (ph===2?'3':'5') + ' rounds. 30 sec on / 20 sec rest.',
-        exercises: [
-          { name: 'High Knees',    sets: '30 sec', weight: '', tip: 'Max effort. Knees to hip height.' },
-          { name: 'Jumping Jacks', sets: '30 sec', weight: '', tip: 'Steady pace recovery round.' },
-        ]
-      }] : []),
-      {
-        label: 'Cool-down', time: '7 min', color: 'mint',
-        exercises: [
-          { name: "Child's Pose",           sets: '1 min',            weight: '', tip: 'Full body reset.' },
-          { name: 'Chest doorway stretch',  sets: '30 sec each side', weight: '', tip: 'Arms on door frame, lean your body through gently.' },
-          { name: 'Tricep overhead stretch',sets: '30 sec each arm',  weight: '', tip: 'Arm behind head, push elbow down with your other hand.' },
-          { name: 'Cross-body arm stretch', sets: '30 sec each side', weight: '', tip: 'Pull arm across chest with other hand.' },
-          { name: 'Deep breathing',         sets: '1 min',            weight: '', tip: 'Inhale 4 sec → hold 2 sec → exhale 6 sec.' },
-        ]
-      },
+    sub:   'Chest · Shoulders · Triceps  —  ~55 min',
+    sections: ph => [
+      { label:'Warm-up', time:'8 min', color:'mint', exercises:[
+        { name:'Arm circles fwd + back',sets:'1 min',           tip:'Full shoulder warm-up. Go big circles.' },
+        { name:'Wall push-ups',         sets:'10 reps',         tip:'Hands on wall, easy chest opener. Warm-up only.' },
+        { name:'Cat Cow',               sets:'2 sets × 8 reps', tip:'Spine mobility. Breathe with each movement.' },
+        { name:'Shadow batting swings', sets:'20 reps',         tip:'Cricket-specific. Loosens shoulders, chest, and core.' },
+      ]},
+      { label:'Standalone', color:'green',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          { name:'Push-up',
+            sets:`4 sets × ${R(ph,'10','15','20')} reps`, weight:'Bodyweight',
+            tip:'Hands slightly wider than shoulders. 2 sec down, 1 sec up. Do on knees if needed — that is totally fine.',
+            key:'★ Add 2 reps each week' },
+        ]},
+      { label:'Superset 1', color:'orange',
+        groupNote:`Do 1A then immediately 1B. Rest ${R(ph,'60s','45s','30s')} after both. Repeat 3 times.`,
+        exercises:[
+          { name:'1A. DB Overhead Press',
+            sets:'3 sets × 12 reps', weight:R(ph,'10 lb each','15 lb each','20 lb each'),
+            tip:'Seated or standing. Dumbbells at shoulders, press straight up. Lower slowly — 3 sec down.' },
+          { name:'1B. DB Front Raise',
+            sets:'3 sets × 12 reps', weight:R(ph,'5 lb each','8 lb each','10 lb each'),
+            tip:"Arms straight, raise to shoulder height in front. Lower slowly. Don't swing." },
+        ]},
+      { label:'Superset 2', color:'orange',
+        groupNote:`Do 2A then immediately 2B. Rest ${R(ph,'60s','45s','30s')} after both. Repeat 3 times.`,
+        exercises:[
+          { name:'2A. DB Tricep Kickback',
+            sets:'3 sets × 10 reps each arm', weight:R(ph,'10 lb','15 lb','20 lb'),
+            tip:'Hinge forward. Upper arm stays parallel to floor. Extend arm back fully. Squeeze tricep at top.' },
+          { name:'2B. Pike Push-up',
+            sets:`3 sets × ${R(ph,'8','10','12')} reps`, weight:'Bodyweight',
+            tip:'Hips high in a V-shape. Bend elbows to lower head toward floor. Push back up. Builds shoulder strength for throwing.' },
+        ]},
+      { label:'Standalone', color:'green',
+        restNote:`Rest ${R(ph,'60s','45s','30s')} between sets`,
+        exercises:[
+          ...(ph>=2?[{ name:'DB Lateral Raise',
+            sets:'3 sets × 12 reps', weight:R(ph,'','5–8 lb each','8–10 lb each'),
+            tip:'Arms at sides, raise out sideways to shoulder height. Lower slowly. Great for shoulder stability in throws.',
+            key:'Added from Phase 2' }]:[]),
+          { name:'Superman Hold',
+            sets:'3 sets × 10 reps', weight:'Bodyweight',
+            tip:'Lie face down, arms forward. Lift arms + chest + legs off floor at same time. Hold 3 sec.' },
+          ...(ph===3?[{ name:'DB Floor Press  (Phase 3)',
+            sets:'3 sets × 12 reps', weight:'20 lb each hand',
+            tip:'Lie on back on floor, dumbbells at chest. Press up. Lower until elbows touch floor each rep.',
+            key:'New in Phase 3' }]:[]),
+        ]},
+      ...(ph>=2?[{ label:'Cardio Finisher', time:R(ph,'','5 min','8 min'), color:'orange',
+        groupNote:`${R(ph,'','3','5')} rounds. 30 sec on / 20 sec rest.`,
+        exercises:[
+          { name:'High Knees',    sets:'30 sec', tip:'Max effort. Knees to hip height.' },
+          { name:'Jumping Jacks', sets:'30 sec', tip:'Steady pace recovery round.' },
+        ]}]:[]),
+      { label:'Cool-down', time:'7 min', color:'mint', exercises:[
+        { name:"Child's Pose",            sets:'1 min',            tip:'Full body reset.' },
+        { name:'Chest doorway stretch',   sets:'30 sec each side', tip:'Arms on door frame, lean your body through gently.' },
+        { name:'Tricep overhead stretch', sets:'30 sec each arm',  tip:'Arm behind head, push elbow down with your other hand.' },
+        { name:'Cross-body arm stretch',  sets:'30 sec each side', tip:'Pull arm across chest with other hand.' },
+        { name:'Deep breathing',          sets:'1 min',            tip:'Inhale 4 sec → hold 2 sec → exhale 6 sec.' },
+      ]},
     ]
   },
 
   full: {
     title: 'Full Body Circuit',
-    sub:   'Stamina · Fat Burn · Cricket Fitness — ~55 min',
-    sections: (ph) => [
-      {
-        label: 'Warm-up', time: '8 min', color: 'mint',
-        exercises: [
-          { name: 'Jumping jacks',   sets: '1 min',           weight: '', tip: 'Full body activation. Gets everything warm.' },
-          { name: 'Hip circles',     sets: '30 sec each side',weight: '', tip: 'Hands on hips, draw big circles. Loosen hips.' },
-          { name: 'High knees slow', sets: '30 sec',          weight: '', tip: 'Easy pace — calf and leg warm-up.' },
-          { name: 'Inchworms',       sets: '5 reps',          weight: '', tip: 'Walk hands forward to plank position, walk hands back to feet, stand up.' },
-        ]
-      },
-      {
-        label: 'Circuit', time: null, color: 'green',
-        groupNote: 'Do ALL exercises back to back with no rest between them. Rest 90 sec after completing all = 1 round. Do ' + (ph===1?'3':ph===2?'4':'5') + ' rounds total.',
-        exercises: [
-          { name: 'Mountain Climbers',
-            sets: '20 each side',
-            weight: 'Bodyweight',
-            tip: 'Push-up position. Drive knees to chest fast, alternating. Keep hips level throughout.',
-            key: '★ Best exercise for belly fat + cricket sprint fitness' },
-          { name: 'Squat to Press',
-            sets: '12 reps',
-            weight: ph===1?'10 lb each':ph===2?'15 lb each':'20 lb each',
-            tip: 'Squat holding dumbbells at shoulders. Stand up and press overhead in one smooth movement.' },
-          { name: 'High Knees',
-            sets: '30 seconds',
-            weight: 'Bodyweight',
-            tip: 'Drive knees up to hip height. Pump your arms. Sprint pace — give it everything.' },
-          { name: 'Calf Raise (slow)',
-            sets: '20 reps',
-            weight: ph===1?'Bodyweight':ph===2?'10 lb dumbbell':'20 lb dumbbell',
-            tip: '2 sec up, 3 sec down. Even during the circuit — calves need volume to heal.',
-            key: '★ Never skip — even here' },
-          { name: 'Renegade Row',
-            sets: '8 each side',
-            weight: ph===1?'10 lb':ph===2?'10–15 lb':'15 lb',
-            tip: 'Push-up position, hands on dumbbells. Row one dumbbell to hip. Keep hips square — don\'t rotate.' },
-          { name: 'Plank Hold',
-            sets: (ph===1?'30':ph===2?'45':'60') + ' seconds',
-            weight: 'Bodyweight',
-            tip: 'Go straight into this after renegade row. Body straight, belly tight, breathe normally.' },
-          { name: 'Jump Squat',
-            sets: '10 reps',
-            weight: 'Bodyweight',
-            tip: 'Squat down then explode upward off both feet. Land softly bending knees. Builds power for quick singles and boundaries.' },
-          ...(ph >= 2 ? [{
-            name: 'DB Deadlift',
-            sets: '12 reps',
-            weight: ph===2?'15 lb each':'20 lb each',
-            tip: 'Hinge at hips, dumbbells close to legs, flat back. Stand tall squeezing glutes. Powerful lower back builder.',
-            key: 'Added from Phase 2'
-          }] : []),
-        ]
-      },
-      ...(ph >= 2 ? [{
-        label: 'Cardio Finisher', time: ph===2?'5 min':'8 min', color: 'orange',
-        groupNote: (ph===2?'3':'5') + ' rounds. 30 sec on / 20 sec rest. This is on top of the circuit.',
-        exercises: [
-          { name: 'High Knees',    sets: '30 sec', weight: '', tip: 'Absolute max effort. This is the finisher.' },
-          { name: 'Burpee (modified)', sets: '8 reps', weight: '', tip: 'Squat → hands down → step feet back → push-up → step in → jump up. Modify by stepping instead of jumping.' },
-        ]
-      }] : []),
-      {
-        label: 'Cool-down', time: '7 min', color: 'mint',
-        exercises: [
-          { name: 'Standing quad stretch', sets: '30 sec each',     weight: '', tip: 'Pull ankle to glute. Hold a wall for balance if needed.' },
-          { name: 'Calf wall stretch',     sets: '45 sec each',     weight: '', tip: 'Do every session. Heel pressed down, lean into wall.' },
-          { name: 'Cobra pose',            sets: '30 sec',          weight: '', tip: 'Lie face down, push up onto hands, look up. Hips stay on floor.' },
-          { name: 'Full forward fold',     sets: '45 sec',          weight: '', tip: 'Stand, bend forward, let arms hang heavy. Relax completely.' },
-          { name: 'Deep breathing',        sets: '1 min',           weight: '', tip: 'Inhale 4 sec → hold 2 sec → exhale 6 sec. You earned this.' },
-        ]
-      },
+    sub:   'Stamina · Fat Burn · Cricket Fitness  —  ~55 min',
+    sections: ph => [
+      { label:'Warm-up', time:'8 min', color:'mint', exercises:[
+        { name:'Jumping jacks',   sets:'1 min',            tip:'Full body activation. Gets everything warm.' },
+        { name:'Hip circles',     sets:'30 sec each side', tip:'Hands on hips, draw big circles. Loosen hips.' },
+        { name:'High knees slow', sets:'30 sec',           tip:'Easy pace — calf and leg warm-up.' },
+        { name:'Inchworms',       sets:'5 reps',           tip:'Walk hands forward to plank, walk back to feet, stand up.' },
+      ]},
+      { label:'Circuit', color:'green',
+        groupNote:`Do ALL exercises back to back with no rest between them. Rest 90 sec after completing the full round. Do ${R(ph,'3','4','5')} rounds total.`,
+        exercises:[
+          { name:'Mountain Climbers',
+            sets:'20 each side', weight:'Bodyweight',
+            tip:'Push-up position. Drive knees to chest fast, alternating. Keep hips level throughout.',
+            key:'★ Best for belly fat + cricket sprint fitness' },
+          { name:'Squat to Press',
+            sets:'12 reps', weight:R(ph,'10 lb each','15 lb each','20 lb each'),
+            tip:'Squat holding dumbbells at shoulders. Stand up and press overhead in one smooth movement.' },
+          { name:'High Knees',
+            sets:'30 seconds', weight:'Bodyweight',
+            tip:'Drive knees up to hip height. Pump your arms. Sprint pace — give it everything.' },
+          { name:'Calf Raise (slow)',
+            sets:'20 reps', weight:R(ph,'Bodyweight','10 lb dumbbell','20 lb dumbbell'),
+            tip:'2 sec up, 3 sec down. Even during the circuit — calves need volume to heal.',
+            key:'★ Never skip — even here' },
+          { name:'Renegade Row',
+            sets:'8 each side', weight:R(ph,'10 lb','10–15 lb','15 lb'),
+            tip:"Push-up position, hands on dumbbells. Row one dumbbell to hip. Keep hips square — don't rotate." },
+          { name:'Plank Hold',
+            sets:`${R(ph,'30','45','60')} seconds`, weight:'Bodyweight',
+            tip:'Go straight into this after renegade row. Body straight, belly tight, breathe normally.' },
+          { name:'Jump Squat',
+            sets:'10 reps', weight:'Bodyweight',
+            tip:'Squat down then explode upward off both feet. Land softly bending knees. Builds power for quick singles.' },
+          ...(ph>=2?[{ name:'DB Deadlift',
+            sets:'12 reps', weight:R(ph,'','15 lb each','20 lb each'),
+            tip:'Hinge at hips, dumbbells close to legs, flat back. Stand tall squeezing glutes. Powerful lower back builder.',
+            key:'Added from Phase 2' }]:[]),
+        ]},
+      ...(ph>=2?[{ label:'Cardio Finisher', time:R(ph,'','5 min','8 min'), color:'orange',
+        groupNote:`${R(ph,'','3','5')} rounds. 30 sec on / 20 sec rest. This is on top of the circuit.`,
+        exercises:[
+          { name:'High Knees',        sets:'30 sec',  tip:'Absolute max effort. This is the finisher.' },
+          { name:'Burpee (modified)', sets:'8 reps',  tip:'Squat → hands down → step feet back → push-up → step in → jump up. Step instead of jump if needed.' },
+        ]}]:[]),
+      { label:'Cool-down', time:'7 min', color:'mint', exercises:[
+        { name:'Standing quad stretch',   sets:'30 sec each',      tip:'Pull ankle to glute. Hold a wall for balance if needed.' },
+        { name:'Calf wall stretch',       sets:'45 sec each',      tip:'Do every session. Heel pressed down, lean into wall.' },
+        { name:"Child's Pose side reach", sets:'30 sec each side', tip:'Walk hands left, hold, then right. Stretches your lower back and QL.' },
+        { name:'Cobra pose',              sets:'30 sec',           tip:'Lie face down, push up onto hands, look up. Hips stay on floor.' },
+        { name:'Deep breathing',          sets:'1 min',            tip:'Inhale 4 sec → hold 2 sec → exhale 6 sec. You earned this.' },
+      ]},
     ]
   },
 
@@ -749,134 +490,108 @@ function formatDate(d) {
 }
 
 function renderWorkout(type, phase) {
-  const data = WORKOUTS[type];
-  const sections = data.sections(phase);
   let html = '';
-
-  for (const sec of sections) {
-    const hdrClass = sec.color === 'mint' ? 'mint' : sec.color === 'orange' ? 'orange' : '';
+  for (const sec of WORKOUTS[type].sections(phase)) {
+    const hc = sec.color==='mint'?'mint':sec.color==='orange'?'orange':'';
     html += `<div class="section">
-      <div class="section-header ${hdrClass}">
+      <div class="section-header ${hc}">
         <span class="section-title">${sec.label}</span>
-        ${sec.time ? `<span class="section-time">${sec.time}</span>` : ''}
+        ${sec.time?`<span class="section-time">${sec.time}</span>`:''}
       </div>`;
-
-    if (sec.groupNote) {
-      html += `<div class="group-label">${sec.groupNote}</div>`;
-    }
-    if (sec.restNote) {
-      html += `<div class="rest-note">${sec.restNote}</div>`;
-    }
-
-    sec.exercises.forEach((ex, i) => {
+    if (sec.groupNote) html += `<div class="group-label">${sec.groupNote}</div>`;
+    if (sec.restNote)  html += `<div class="rest-note">${sec.restNote}</div>`;
+    sec.exercises.forEach((ex,i) => {
       html += `<div class="ex-row ${i%2===1?'shade':''}">
         <div>
           <div class="ex-name">${ex.name}</div>
           <div class="ex-tip">${ex.tip}</div>
-          ${ex.key ? `<div class="ex-key">${ex.key}</div>` : ''}
+          ${ex.key?`<div class="ex-key">${ex.key}</div>`:''}
         </div>
         <div class="ex-meta">
           <div class="ex-sets">${ex.sets}</div>
-          ${ex.weight ? `<div class="ex-weight">${ex.weight}</div>` : ''}
+          ${ex.weight?`<div class="ex-weight">${ex.weight}</div>`:''}
         </div>
       </div>`;
     });
-
     html += `</div>`;
   }
   return html;
 }
 
-function renderPhaseInfo(currentPhase, week) {
+function renderPhaseInfo(phase, week) {
   const phases = [
-    { n:1, weeks:'1–4',  rest:'60 sec', note:'Learn the movements. Focus on form.' },
-    { n:2, weeks:'5–8',  rest:'45 sec', note:'Add weight. Add cardio finisher.' },
-    { n:3, weeks:'9–12', rest:'30 sec', note:'Max weight. Peak cricket fitness.' },
+    {n:1,weeks:'1–4', rest:'60 sec',note:'Learn the movements. Focus on form.'},
+    {n:2,weeks:'5–8', rest:'45 sec',note:'Add weight. Add cardio finisher.'},
+    {n:3,weeks:'9–12',rest:'30 sec',note:'Max weight. Peak cricket fitness.'},
   ];
-  let cards = phases.map(p => `
-    <div class="phase-card ${p.n===currentPhase?'current':''}">
-      <div class="phase-card-title">Phase ${p.n} · Wk ${p.weeks}</div>
-      <div class="phase-card-detail">Rest: <strong>${p.rest}</strong><br>${p.note}</div>
-    </div>`).join('');
   return `<div class="phase-info">
-    <h4>You are in Phase ${currentPhase} · Week ${week} of 12</h4>
-    <div class="phase-grid">${cards}</div>
+    <h4>Phase ${phase} · Week ${week} of 12</h4>
+    <div class="phase-grid">${phases.map(p=>`
+      <div class="phase-card ${p.n===phase?'current':''}">
+        <div class="phase-card-title">Phase ${p.n} · Wk ${p.weeks}</div>
+        <div class="phase-card-detail">Rest: <strong>${p.rest}</strong><br>${p.note}</div>
+      </div>`).join('')}</div>
   </div>`;
 }
 
-function renderProgress(totalDays) {
-  const pct = Math.min(100, Math.round((totalDays / 84) * 100));
+function renderProgress(diff) {
+  const pct = Math.min(100, Math.round((diff/84)*100));
   return `<div class="progress-bar-wrap">
     <h4><span>12-Week Progress</span><span>${pct}%</span></h4>
     <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
   </div>`;
 }
 
-function buildWeekNav(today) {
-  const nav = document.getElementById('weekNav');
-  const dayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  const dayTypes = {pull:'Pull',leg:'Leg',rest:'REST',push:'Push',full:'Full Body',cricket:'Cricket'};
-
-  // Show 7 days: Mon of current week through Sun
-  const dow = today.getDay();
-  const monday = new Date(today);
-  monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
-
-  let html = '';
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(monday);
-    d.setDate(monday.getDate() + i);
-    const info = getDayInfo(d);
-    const isToday = d.toDateString() === today.toDateString();
-    const isRest = info.type === 'rest' || info.type === 'before';
-    const label = dayTypes[info.type] || 'REST';
-    html += `<div class="nav-day ${isToday?'active':''} ${isRest?'rest-day':''}"
-      onclick="jumpToDay(${d.getFullYear()},${d.getMonth()},${d.getDate()})">
-      <div style="font-weight:700">${dayNames[i]}</div>
-      <div style="font-size:10px;margin-top:1px">${label}</div>
-    </div>`;
-  }
-  nav.innerHTML = html;
+function renderBackNotice() {
+  return `<div class="back-notice">
+    <h4>⚠ Lower Back Recovery — Active This Week</h4>
+    <p>You strained your left QL (lower back side muscle) after last Leg Day.
+    Ice 15–20 min on / 40 min off. No heat for the first 48–72 hrs. Keep walking normally — lying still stiffens it.
+    <strong>Leg Day order has been permanently fixed:</strong>
+    core activation and glute bridge now come before squats every session, so this won't happen again.</p>
+  </div>`;
 }
 
 function render(date) {
-  const info = getDayInfo(date);
-  const dateStr = formatDate(date);
-  document.getElementById('dateDisplay').textContent = dateStr;
-
-  const dayNameEl = document.getElementById('dayName');
-  const daySubEl  = document.getElementById('daySub');
-  const main      = document.getElementById('mainContent');
-  const badge     = document.getElementById('phaseBadge');
+  const info  = getDayInfo(date);
+  const dayEl = document.getElementById('dayName');
+  const subEl = document.getElementById('daySub');
+  const main  = document.getElementById('mainContent');
+  const badge = document.getElementById('phaseBadge');
+  document.getElementById('dateDisplay').textContent = formatDate(date);
 
   if (info.type === 'before') {
     badge.textContent = 'Not started';
-    dayNameEl.textContent = 'Plan starts 28 Apr 2026';
-    daySubEl.textContent  = '';
-    main.innerHTML = `<div class="rest-screen"><div class="rest-icon">📅</div><h2>Plan hasn't started yet</h2><p>Open this on or after Monday 28 April 2026.</p></div>`;
+    dayEl.textContent = 'Plan starts 28 Apr 2026';
+    subEl.textContent = '';
+    main.innerHTML = `<div class="rest-screen"><div class="rest-icon">📅</div>
+      <h2>Plan hasn't started yet</h2><p>Open this on or after Monday 28 April 2026.</p></div>`;
     return;
   }
 
   badge.textContent = `Phase ${info.phase} · Wk ${info.week}`;
 
   if (info.type === 'rest') {
-    dayNameEl.textContent = 'Rest Day';
-    daySubEl.textContent  = 'Active recovery — light 20 min walk is fine';
+    dayEl.textContent = 'Rest Day';
+    subEl.textContent = 'Light 20 min walk is fine. No gym today.';
     main.innerHTML = `
       <div class="rest-screen">
         <div class="rest-icon">🛌</div>
         <h2>Rest &amp; Recover</h2>
-        <p>Your muscles grow stronger on rest days, not workout days.<br>Light 20-min walk is fine. No gym today.</p>
-        <p style="margin-top:12px;font-size:13px;color:#1c5c30;font-weight:600">Tonight: do your 2-min calf wall stretch before bed.</p>
+        <p>Your muscles grow stronger on rest days, not workout days.<br>
+           Light 20-min walk is fine. No gym today.</p>
+        <p style="margin-top:12px;font-size:13px;color:var(--green);font-weight:600">
+           Tonight: do your 2-min calf wall stretch before bed.</p>
       </div>
-      ${renderPhaseInfo(info.phase, info.week)}
-      ${renderProgress(info.daysDiff)}`;
+      ${renderBackNotice()}
+      ${renderPhaseInfo(info.phase,info.week)}
+      ${renderProgress(info.diff)}`;
     return;
   }
 
   if (info.type === 'cricket') {
-    dayNameEl.textContent = 'Cricket Match Day 🏏';
-    daySubEl.textContent  = 'Apply your fitness. Track your improvements.';
+    dayEl.textContent = 'Cricket Match Day 🏏';
+    subEl.textContent = 'Apply your fitness. Track your improvements.';
     main.innerHTML = `
       <div class="cricket-screen">
         <h2>Match Day</h2>
@@ -887,29 +602,49 @@ function render(date) {
           <li><strong>Post-match:</strong> 10 min walk → stretch calves + hamstrings → ice calves 15 min if sore → eat within 45 min.</li>
         </ul>
       </div>
-      ${renderPhaseInfo(info.phase, info.week)}
-      ${renderProgress(info.daysDiff)}`;
+      ${renderPhaseInfo(info.phase,info.week)}
+      ${renderProgress(info.diff)}`;
     return;
   }
 
-  const workout = WORKOUTS[info.type];
-  dayNameEl.textContent = workout.title;
-  daySubEl.textContent  = workout.sub;
+  const w = WORKOUTS[info.type];
+  dayEl.textContent = w.title;
+  subEl.textContent = w.sub;
   main.innerHTML = renderWorkout(info.type, info.phase)
+    + renderBackNotice()
     + renderPhaseInfo(info.phase, info.week)
-    + renderProgress(info.daysDiff);
+    + renderProgress(info.diff);
+}
+
+function buildWeekNav(today) {
+  const labels    = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const typeLabel = {pull:'Pull',leg:'Leg',rest:'REST',push:'Push',full:'Full Body',cricket:'Cricket'};
+  const dow       = today.getDay();
+  const monday    = new Date(today);
+  monday.setDate(today.getDate() - (dow===0?6:dow-1));
+  document.getElementById('weekNav').innerHTML = Array.from({length:7},(_,i)=>{
+    const d    = new Date(monday);
+    d.setDate(monday.getDate()+i);
+    const info = getDayInfo(d);
+    const isToday = d.toDateString()===today.toDateString();
+    const isRest  = info.type==='rest'||info.type==='before';
+    return `<div class="nav-day ${isToday?'active':''} ${isRest?'rest-day':''}"
+      onclick="jumpToDay(${d.getFullYear()},${d.getMonth()},${d.getDate()})">
+      <div style="font-weight:700">${labels[i]}</div>
+      <div style="font-size:10px;margin-top:1px">${typeLabel[info.type]||'REST'}</div>
+    </div>`;
+  }).join('');
+}
+
+function jumpToDay(y,m,d) {
+  currentDate = new Date(y,m,d);
+  buildWeekNav(currentDate);
+  render(currentDate);
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 let currentDate = new Date();
 currentDate.setHours(0,0,0,0);
-
-function jumpToDay(y, m, d) {
-  currentDate = new Date(y, m, d);
-  buildWeekNav(currentDate);
-  render(currentDate);
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
 buildWeekNav(currentDate);
 render(currentDate);
 </script>
